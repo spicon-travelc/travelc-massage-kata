@@ -9,13 +9,13 @@ Crear un sistema que permita a los clientes consultar la disponibilidad de masaj
 
 Por un lado, tenemos un servicio que nos da los terapeutas disponibles con la siguiente información:
 
-* Código identificador del terapetua
+* Código identificador del terapeuta
 * Nombre
 * Precio por hora
-* Si permite cancelar una sesión de masaje o no.
+* Si se permite cancelar una sesión de masaje con este terapeuta.
 
 Para acceder al servicio:
-get - http://192.168.10.124:38080/massage/therapist
+get - http://192.168.10.124:38080/massages/therapists
 
 Por otro lado, tenemos un servicio que nos proporciona todos los masajes disponibles para un día concreto. Cada masaje tiene la siguiente información:
 
@@ -26,7 +26,7 @@ Por otro lado, tenemos un servicio que nos proporciona todos los masajes disponi
 * Política de cancelación
 
 Para acceder al servicio:
-get - http://192.168.10.124:38080/massage/quote/2023-10-02
+get - http://192.168.10.124:38080/massages/quote/2023-10-02
 
 
 El nuevo servicio de disponibilidad tiene que devolver una lista de terapeutas y los masajes que puede ofrecer para el día de la consulta. No se mostrarán los masajes que no estén disponibles.
