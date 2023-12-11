@@ -1,39 +1,31 @@
 ### Título de la Kata ###
-Sistema de disponibilidad Salón de Masajes
+Políticas de cancelación Salón de Masajes
 
 ### Descripción ###
-Un salón de masajes ofrece servicios de masaje proporcionados por terapeutas. Cada terapeuta tiene un precio por hora para sus servicios, y el salón ofrece diferentes tipos de masajes, cada uno con una duración específica y una política de cancelación.
+Un salón de masajes ofrece servicios de masaje y está preparando su plataforma para ofrecerlos online. Cada masaje tiene un precio, un estado de disponibilidad, una duración específica y una política de cancelación.
 
-### Objetivo ###
-Crear un sistema que permita a los clientes consultar la disponibilidad de masajes para un día concreto.
 
-Por un lado, tenemos un servicio que nos da los terapeutas disponibles con la siguiente información:
+### Preparación ###
+Descarga y ejecutar en local el servicio que devuelve la disponibilidad de masajes. Para ello seguir las instrucciones: https://github.com/spicon-travelc/travelc-massage-kata-service
 
-* Código identificador del terapeuta
-* Nombre
-* Precio por hora
-* Si se permite cancelar una sesión de masaje con este terapeuta.
-
-Para acceder al servicio:
-get - http://192.168.10.124:38080/massages/therapists
-
-Por otro lado, tenemos un servicio que nos proporciona todos los masajes disponibles para un día concreto. Cada masaje tiene la siguiente información:
+### Servicio de disponibilidad ###
+Tenemos un servicio que nos proporciona todos los masajes disponibles para un día concreto. Cada masaje tiene la siguiente información:
 
 * Código del masaje
 * Nombre
 * Estado
 * Duración
+* Precio
 * Política de cancelación
 
 Para acceder al servicio:
-get - http://192.168.10.124:38080/massages/quote/2023-10-02
+get - http://localhost:38080/massages/quote/2023-10-02
 
+### Objetivo ###
+Se necesita un servicio que devuelva los masajes disponibles para un día concreto y que muestre las políticas de cancelación en un formato que el cliente entienda.
 
-El nuevo servicio de disponibilidad tiene que devolver una lista de terapeutas y los masajes que puede ofrecer para el día de la consulta. No se mostrarán los masajes que no estén disponibles.
+Cosas a tener en cuenta:
 
-También se deberá calcular:
-
-* El precio final del masaje.
 * La política de cancelación expresada en un mensaje. Teniendo en cuenta que el día del masaje siempre será 100 % no reembolsable.
 
 Ejemplo del mensaje:
