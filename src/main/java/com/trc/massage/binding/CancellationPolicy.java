@@ -23,8 +23,4 @@ public class CancellationPolicy {
     public void setPrice(Price price) {
         this.price = price;
     }
-
-    public Double getAmount() {
-        return price.getAmount();
-    }
 }

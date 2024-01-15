@@ -6,14 +6,6 @@ public class Price {
     private Double amount;
     private String currency;
 
-    public Price() {
-    }
-
-    public Price(Double amount, String currency) {
-        this.amount = amount;
-        this.currency = currency;
-    }
-
     public Double getAmount() {
         return amount;
     }
@@ -28,10 +20,5 @@ public class Price {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    @Override
-    public String toString() {
-        return amount + " " + currency;
     }
 }
