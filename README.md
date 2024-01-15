@@ -7,7 +7,7 @@ Un salón de masajes ofrece servicios de masaje y está preparando su plataforma
 Descarga y ejecuta localmente el servicio que devuelve la disponibilidad de masajes. Para ello, sigue las instrucciones en: [Instrucciones del Servicio](https://github.com/spicon-travelc/travelc-massage-kata-service)
 
 ## Servicio de disponibilidad
-Tenemos un servicio que nos proporciona todos los masajes disponibles para un día específico. Cada masaje tiene la siguiente información:
+Hay un servicio que nos proporciona todos los masajes disponibles para un día específico. Cada masaje tiene la siguiente información:
 
 - Código del masaje
 - Nombre
@@ -19,11 +19,14 @@ Tenemos un servicio que nos proporciona todos los masajes disponibles para un d�
 Para acceder al servicio: `GET - http://localhost:38080/massages/quote/2024-10-02`
 
 ## Objetivo
-Se necesita un servicio que devuelva los masajes disponibles para un día específico y que muestre las políticas de cancelación en un formato comprensible para el cliente.
+Se necesita un servicio que devuelva los masajes disponibles para un día específico, su precio, duración y que muestre las políticas de cancelación en un formato comprensible para el cliente.
 
 Cosas a tener en cuenta:
 
-- La política de cancelación se expresa en un mensaje, teniendo en cuenta que el día del masaje siempre será 100 % no reembolsable.
+- Las políticas de cancelación se expresan en un mensaje (ver ejemplo).
+- El día del masaje siempre será 100 % no reembolsable.
+- En los mensajes, no puede haber fechas anteriores al día actual.
+
 
 Ejemplo del mensaje:
 
