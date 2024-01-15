@@ -1,4 +1,4 @@
-# Políticas de cancelación en el Salón de Masajes
+# Políticas de cancelación Salón de Masajes
 
 ## Descripción
 Un salón de masajes ofrece servicios de masaje y está preparando su plataforma para ofrecerlos en línea. Cada masaje tiene un precio, un estado de disponibilidad, una duración específica y una política de cancelación.
