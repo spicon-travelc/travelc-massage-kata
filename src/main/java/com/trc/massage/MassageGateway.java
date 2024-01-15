@@ -11,8 +11,8 @@ import java.util.List;
 
 public class MassageGateway {
 
-    public static final String ENDPOINT = "http://localhost:38080/massages/";
-    public static final ObjectMapper OBJECT_MAPPER = ObjectMapperFactory.create();
+    private static final String ENDPOINT = "http://localhost:38080/massages/";
+    private static final ObjectMapper OBJECT_MAPPER = ObjectMapperFactory.create();
 
     public Response getMassages(LocalDate date) {
         WebClient webClient = WebClient.create(ENDPOINT + "quote/yyyy-MM-dd", List.of(new JacksonJsonProvider(OBJECT_MAPPER)));
