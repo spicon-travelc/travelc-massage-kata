@@ -22,6 +22,7 @@ dependencies {
     implementation "org.apache.cxf:cxf-rt-rs-client:3.5.5"
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2'
+    implementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.16.1'
 }
 
 test {

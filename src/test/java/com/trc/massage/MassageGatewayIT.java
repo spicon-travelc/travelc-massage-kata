@@ -8,14 +8,13 @@ import java.time.LocalDate;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.core.Is.is;
 
 public class MassageGatewayIT {
 
     private MassageGateway gateway = new MassageGateway();
 
     @Test
-    public void given_request_date_valid_should_return_massages() throws JsonProcessingException {
+    public void given_request_date_valid_should_return_massages() {
         var response = gateway.getMassages(LocalDate.now().plusDays(25));
 
         assertThat(response.getMassages().size(), greaterThan(0));
