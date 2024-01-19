@@ -1,8 +1,9 @@
 
 package com.trc.massage.binding;
 
-import java.time.Duration;
-import java.util.List;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
 
 public class Massage {
 
@@ -61,4 +62,29 @@ public class Massage {
         this.cancellationPolicies = cancellationPolicies;
     }
 
+    public String formatPolicies(LocalDate date) {
+        var sort = getCancellationPolicies().stream()
+                .filter(p -> p.getPrice().getAmount() > 0)
+                .sorted(Comparator.comparing(CancellationPolicy::getDate)).toList();
+        List<String> stringPolicies = new ArrayList<>();
+        List<CancellationDateRange> policies = new ArrayList<>();
+        if (sort.get(0).getDate().isAfter(LocalDate.now())) {
+            policies.add(new CancellationDateRange(null, sort.get(0).getDate().minusDays(1), new Price(0.0d, sort.get(0).getPrice().getCurrency())));
+        }
+        for (var i = 0; i < sort.size(); i++) {
+            var p = sort.get(i);
+            policies.add(new CancellationDateRange(p.getDate(), i + 1 < sort.size() ? sort.get(i + 1).getDate().minusDays(1) : date.minusDays(1), p.getPrice()));
+        }
+        if (sort.get(sort.size() - 1).getDate().isAfter(date)) {
+            policies.add(new CancellationDateRange(date.minusDays(1), null, new Price(0.0d, sort.get(0).getPrice().getCurrency())));
+        }
+
+        for (var p : policies) {
+            if (p.getStartDate() == null) {
+                stringPolicies.add("Sin gastos de cancelación hasta el %s".formatted(p.getEndDate()));
+            } else {
+
+            }
+        }
+    }
 }

@@ -23,4 +23,5 @@ public class CancellationPolicy {
     public void setPrice(Price price) {
         this.price = price;
     }
+
 }
